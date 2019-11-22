@@ -268,6 +268,10 @@ namespace VstsSyncMigrator.Core.Execution.OMatics
             if (link.ToLowerInvariant().Contains("git/commit"))
                 return RepistoryType.Git;
 
+            //vstfs:///Git/PullRequestId/25f94570-e3e7-4b79-ad19-4b434787fd5a%2f50477259-3058-4dff-ba4c-e8c179ec5327%2f41dd2754058348d72a6417c0615c2543b9b55535
+            if (link.ToLowerInvariant().Contains("git/pullrequestid"))
+                return RepistoryType.Git;
+
             //vstfs:///VersionControl/Changeset/{id}
             if (link.ToLowerInvariant().Contains("versioncontrol/changeset"))
                 return RepistoryType.TFVC;
